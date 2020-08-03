@@ -1,0 +1,56 @@
+$strongColor:rgb(88, 15, 88);
+$lightContrastColor:rgb(175, 201, 231);
+
+@mixin border-mixin {
+    border-color: $strongColor;
+    border-width: 10px;
+    border-style: solid;
+}
+
+@mixin centerOverPic {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+@mixin shadowPic{
+    width: 100%;
+    opacity: 0.3;
+}
+
+body{
+    text-align: center;
+    background-color: $lightContrastColor;
+}
+
+h1{
+@include border-mixin;
+padding: 40px;
+}
+
+h4.center{
+@include centerOverPic;
+}
+
+p{
+color:$strongColor;
+font-size: 14pt;
+}
+
+img.main{
+    @include border-mixin;
+    width: 100%;   
+}
+
+img.thumbnail{
+    @include border-mixin;
+    @include shadowPic;   
+}
+
+.container{     
+    position: relative;
+    margin: auto;
+    width: 50%;
+}
